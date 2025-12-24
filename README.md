@@ -13,6 +13,26 @@ pnpm dev
 # or
 bun dev
 ```
+# SaaS Landing Page
+
+A modern, fully responsive SaaS landing page built using Next.js, Tailwind CSS, and Framer Motion.
+
+🚀 Live Demo: https://saas-app-mbms-3x6qq0vhl-kuhali-pauls-projects.vercel.app/
+
+## 🛠 Tech Stack
+- Next.js
+- React.js
+- Tailwind CSS
+- Framer Motion
+- Lucide Icons
+- Vercel
+
+## ✨ Features
+- Fully responsive UI
+- Modern gradient-based design
+- Animated UI components
+- Mobile-friendly navigation
+- Optimized performance
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
