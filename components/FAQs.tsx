@@ -1,8 +1,5 @@
-'use client';
 import React from 'react';
-import PlusIcon from '../public/assets/icons/plus.svg';
-import MinusIcon from '../public/assets/icons/minus.svg';
-import clsx from 'clsx';
+import { Plus, Minus } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const items = [
@@ -28,17 +25,19 @@ const AccordionItem = ({ question, answer }: { question: string; answer: string 
 	const [isOpen, setIsOpen] = React.useState(false);
 
 	return (
-		<div className="py-7 border-b border-white/30" onClick={() => setIsOpen(!isOpen)}>
-			<div className="flex items-center">
+		<div className="py-7 border-b border-white/30 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+			<div className="flex items-center gap-4">
 				<span className="flex-1 text-lg font-bold">{question}</span>
-				{isOpen ? <MinusIcon /> : <PlusIcon />}
+				{isOpen ? <Minus className="h-5 w-5 text-white" /> : <Plus className="h-5 w-5 text-white" />}
 			</div>
+
 			<AnimatePresence>
 				{isOpen && (
 					<motion.div
 						initial={{ opacity: 0, height: 0, marginTop: 0 }}
 						animate={{ opacity: 1, height: 'auto', marginTop: '16px' }}
 						exit={{ opacity: 0, height: 0, marginTop: 0 }}
+						className="text-white/70"
 					>
 						{answer}
 					</motion.div>
@@ -50,17 +49,18 @@ const AccordionItem = ({ question, answer }: { question: string; answer: string 
 
 export const FAQs = () => {
 	return (
-		<div className="bg-black text-white bg-gradient-to-b from-[#5D2CA8] to-black py-[72px] sm:py-24">
-			<div className="container">
-				<h2 className="text-center text-5xl sm:text-6xl sm:max-w-[648px] mx-auto font-bold tracking-tighter">
+		<section className="bg-gradient-to-b from-[#5D2CA8] to-black text-white py-16 sm:py-24">
+			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<h2 className="mx-auto max-w-[648px] text-center text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight">
 					Frequently asked questions
 				</h2>
-				<div className="mt-12 max-w-[648px] mx-auto">
+
+				<div className="mx-auto mt-12 max-w-[648px]">
 					{items.map(({ question, answer }) => (
 						<AccordionItem question={question} answer={answer} key={question} />
 					))}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };

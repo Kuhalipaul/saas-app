@@ -1,8 +1,5 @@
-'use client';
 import Image from 'next/image';
-import ArrowWIcon from '../public/assets/icons/arrow-w.svg';
-import cursorImage from '../public/assets/images/cursor.png';
-import messageImage from '../public/assets/images/message.png';
+
 import { motion } from 'framer-motion';
 
 export const Hero = () => {
@@ -17,7 +14,15 @@ export const Hero = () => {
 						</span>
 						<span className="inline-flex items-center gap-1">
 							<span>Read More</span>
-							<ArrowWIcon />
+
+							<Image
+								src={'/assets/icons/arrow-w.svg'}
+								height="20"
+								width="20"
+								alt=""
+								className="max-w-none"
+								draggable="false"
+							/>
 						</span>
 					</a>
 				</div>
@@ -32,7 +37,7 @@ export const Hero = () => {
 							dragSnapToOrigin
 						>
 							<Image
-								src={cursorImage}
+								src={'/assets/images/cursor.png'}
 								height="200"
 								width="200"
 								alt=""
@@ -42,7 +47,7 @@ export const Hero = () => {
 						</motion.div>
 						<motion.div className="absolute top-[56px] left-[498px] hidden sm:inline" drag dragSnapToOrigin>
 							<Image
-								src={messageImage}
+								src={'/assets/images/message.png'}
 								height="200"
 								width="200"
 								alt=""

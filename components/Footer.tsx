@@ -1,26 +1,24 @@
-import InstaIcon from '../public/assets/icons/insta.svg';
-import XSocial from '../public/assets/icons/x-social.svg';
-import TiktokIcon from '../public/assets/icons/tiktok.svg';
-import YoutubeIcon from '../public/assets/icons/youtube.svg';
+import { Instagram, Twitter, Youtube, Music } from 'lucide-react';
 
 export const Footer = () => {
 	return (
-		<footer className="py-5 bg-black text-white/60 border-t border-white/20">
-			<div className="container">
-				<div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
-					<div className="text-center">@ 2024 Your Company, Inc. All rights reserved</div>
-					<ul className="flex justify-center gap-2.5">
+		<footer className="border-t border-white/20 bg-black py-5 text-white/60">
+			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+					<div className="text-center">© 2024 Your Company, Inc. All rights reserved</div>
+
+					<ul className="flex gap-3">
 						<li>
-							<XSocial />
+							<Twitter className="h-5 w-5 cursor-pointer hover:text-white transition-colors" />
 						</li>
 						<li>
-							<InstaIcon />
+							<Instagram className="h-5 w-5 cursor-pointer hover:text-white transition-colors" />
 						</li>
 						<li>
-							<TiktokIcon />
+							<Music className="h-5 w-5 cursor-pointer hover:text-white transition-colors" />
 						</li>
 						<li>
-							<YoutubeIcon />
+							<Youtube className="h-5 w-5 cursor-pointer hover:text-white transition-colors" />
 						</li>
 					</ul>
 				</div>

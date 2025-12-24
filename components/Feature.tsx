@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import EcosystemIcon from '../public/assets/icons/ecosystem.svg';
+import Image from 'next/image';
+// import EcosystemIcon from '../public/assets/icons/ecosystem.svg';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 
 export const Feature = ({ title, description }: { title: string; description: string }) => {
@@ -32,7 +33,13 @@ export const Feature = ({ title, description }: { title: string; description: st
 				ref={border}
 			></motion.div>
 			<div className="inline-flex h-14 w-14 bg-white text-black justify-center items-center rounded-lg">
-				<EcosystemIcon />
+				<Image
+					src="/assets/icons/ecosystem.svg"
+					alt="Ecosystem icon"
+					width={24}
+					height={24}
+					className="w-6 h-6 sm:w-8 sm:h-8"
+				/>
 			</div>
 			<h3 className="mt-6 font-bold">{title}</h3>
 			<p className="mt-2 text-white/70">{description}</p>
